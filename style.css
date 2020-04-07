@@ -1,0 +1,31 @@
+body{
+    box-sizing: border-box;
+  }
+#bootstrap-overrides .navbar-brand {
+    font-size: 40px;
+    color: white;
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+.container{
+    float: left;
+    max-width: 100%;
+}
+#bootstrap-overrides .form-inline{
+    justify-content: left;
+}
+.form-inline {
+    margin-top: 10px;
+}
+.dropdown-menu{
+    padding:10px;
+    margin:10px;
+}
+.card{
+    
+    margin : 10px;
+    height:500px;
+    width :1000px;
+}
