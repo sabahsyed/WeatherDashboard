@@ -22,10 +22,22 @@ body{
 .dropdown-menu{
     padding:10px;
     margin:10px;
+    border: none;
 }
 .card{
     
     margin : 10px;
-    height:500px;
+    height:400px;
     width :1000px;
+}
+.forecast{
+    float:left;
+}
+#city{
+    color:black;
+    font-weight: bold;
+
+}
+button{
+    border:none;
 }
