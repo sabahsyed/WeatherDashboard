@@ -41,3 +41,9 @@ body{
 button{
     border:none;
 }
+.cityBtn{
+    display: inline-block;
+}
+#uvIndexStyle{
+    background-color: lightgreen;
+}
