@@ -95,26 +95,17 @@ function searchCity(city) {
       url: queryURL,
       method: "GET"
     }).then(function(res) {
-      console.log("I am in 5 day forecast :" + JSON.stringify(res));
+      console.log("I am in 5 day forecast");
+      console.log("Day1 Temperature :" + res.list[0].main.temp);
+      console.log("Day 1 icon" + res.list[0].weather.icon );
+      console.log("Day1 humidity " + res.list[0].main.humidity);
     });
+    for(var i = 0 ; i < 5 ; i++){
+      
+    }
     $("#day1Date").html(moment().add(1, 'days').calendar());
     $("#day2Date").html(moment().add(2, 'days').calendar());
     $("#day3Date").html(moment().add(3, 'days').calendar());
     $("#day4Date").html(moment().add(4, 'days').calendar());
     $("#day5Date").html(moment().add(5, 'days').calendar());
 });
-// var forecast = forecastURL(city);
-//   function forecast5day(city){
-//     console.log("Inside forecast");
-//     $.ajax({
-//       url: forecast,
-//       method: "GET"
-//     }).then(function(forecastResponse) {
-//       console.log("Forecast response" + forecastResponse);
-//       $("#day1Date").html(moment().add(1, 'days').calendar());
-//       $("#day2Date").html(moment().add(2, 'days').calendar());
-//       $("#day3Date").html(moment().add(3, 'days').calendar());
-//       $("#day4Date").html(moment().add(4, 'days').calendar());
-//       $("#day5Date").html(moment().add(5, 'days').calendar());
-//     });
-//   }
