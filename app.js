@@ -4,6 +4,8 @@
 // Properties of teh present city to be displayed are city name, the date,
 // an icon representation of weather conditions, the temperature, the humidity, the wind speed, 
 //and the UV index.
+$( document ).ready(function() {
+  console.log( "ready!" );
 
 function weatherURL(city){
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?";
@@ -19,7 +21,7 @@ return queryURL + query + key ;
 }
 
 $("#submit").on("click", function(){
-event.preventDefault();
+  event.preventDefault();
   console.log("Submit button clicked");
   searchCity($("#cityName").val());
   
@@ -52,6 +54,7 @@ function searchCity(city) {
     searchedCityName[size] = response.name;
   }
   console.log(response);
+  function displayWeather(){
   var tempF = (response.main.temp - 273.15) * 1.80 + 32;
   $("#city").html(response.name);
   $("#currentDate").html(moment().format("DD/MM/YYYY"));
@@ -70,7 +73,6 @@ function searchCity(city) {
       method: "GET"
     }).then(function(uvresponse) {
       console.log("UV index response" + JSON.stringify(uvresponse));
-      console.log(uvresponse[0].value);
       if(uvresponse[0].value > 6){
         $("#uvIndexStyle").css("background-color", "red");
       }else{
@@ -79,14 +81,22 @@ function searchCity(city) {
       $("#uvIndexStyle").html( uvresponse[0].value);
       
     });
+  }
+
   localStorage.setItem(searchedCityName, JSON.stringify(response.name));
   var a = $("<button>").text(response.name);
   var renderedCities = $("#renderedCities").append(a);
   $("#renderedCities").append("<br/>");
+  $(a).on("click", function(){
+    displayWeather(a.text());
+    
   });
+  
+});
 
 }
   $("#city").on("click", function(city){
+   
     console.log("Rendered city was clicked");
     console.log(city.currentTarget.textContent);
     var queryURL = forecastURL(city.currentTarget.textContent);
@@ -99,13 +109,38 @@ function searchCity(city) {
       console.log("Day1 Temperature :" + res.list[0].main.temp);
       console.log("Day 1 icon" + res.list[0].weather.icon );
       console.log("Day1 humidity " + res.list[0].main.humidity);
+      for(var i = 0 ; i < 5 ; i++){
+        var cardClass = $("<div>").addClass("card");
+        var carHeaderClass = $("<div>").addClass("card-header");
+        var carBodyClass = $("<div>").addClass("card-body");
+        var weather = $("<div>").addClass("card-text");
+        var humidity = $("<div>").addClass("card-text");
+        var tempF = (res.list[i].main.temp - 273.15) * 1.80 + 32;
+        var weatherEle = weather.text("Temp : "  + tempF.toFixed(2) + "℉");
+        var humidityEle = humidity.text("Humidity : " + res.list[i].main.humidity + "%");
+        var iconEle = $("<div>").attr('src', "https://openweathermap.org/img/wn/" + res.list[i].weather.icon + "@2x.png"); 
+        carBodyClass = iconEle.addClass("card-body"); //class added
+        var dateEle = carHeaderClass.text(moment().add((i+1), 'day'));
+        cardClass.append(dateEle , iconEle , weatherEle , humidityEle);
+        $(".card-group").append(cardClass);
+      }
+
+
     });
-    for(var i = 0 ; i < 5 ; i++){
-      
-    }
-    $("#day1Date").html(moment().add(1, 'days').calendar());
-    $("#day2Date").html(moment().add(2, 'days').calendar());
-    $("#day3Date").html(moment().add(3, 'days').calendar());
-    $("#day4Date").html(moment().add(4, 'days').calendar());
-    $("#day5Date").html(moment().add(5, 'days').calendar());
 });
+
+});
+
+// $("#day1Date").html(moment().add(1, 'days').calendar());
+//     $("#day2Date").html(moment().add(2, 'days').calendar());
+//     $("#day3Date").html(moment().add(3, 'days').calendar());
+//     $("#day4Date").html(moment().add(4, 'days').calendar());
+//     $("#day5Date").html(moment().add(5, 'days').calendar())
+
+
+//     <div class="card text-white bg-primary mb-3" style="max-width: 12rem; max-height:12rem;">
+//       <div class="card-header" id = "day5Date">Header</div>
+//       <div class="card-body"><div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+//       <h5 class="card-title"></h5>
+//       <p class="card-text"> </p>
+//       </div>

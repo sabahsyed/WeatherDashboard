@@ -24,7 +24,7 @@ body{
     margin:10px;
     border: none;
 }
-.card{
+.card-9{
     
     margin : 10px;
     height:400px;
@@ -46,4 +46,14 @@ button{
 }
 #uvIndexStyle{
     background-color: lightgreen;
+}
+.card{
+ max-width: 12rem; 
+max-height:12rem;
+color:white;
+background-color: #1284ff;
+border: 1px solid #f8f9fa;
+}
+.card-header{
+    border: 1px solid white;
 }
