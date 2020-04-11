@@ -54,6 +54,7 @@ function searchCity(city) {
     searchedCityName[size] = response.name;
   }
   console.log(response);
+  displayWeather();
   function displayWeather(){
   var tempF = (response.main.temp - 273.15) * 1.80 + 32;
   $("#city").html(response.name);
@@ -118,7 +119,10 @@ function searchCity(city) {
         var tempF = (res.list[i].main.temp - 273.15) * 1.80 + 32;
         var weatherEle = weather.text("Temp : "  + tempF.toFixed(2) + "℉");
         var humidityEle = humidity.text("Humidity : " + res.list[i].main.humidity + "%");
-        var iconEle = $("<div>").attr('src', "https://openweathermap.org/img/wn/" + res.list[i].weather.icon + "@2x.png"); 
+        var img = $('<img id="wicon">');
+        var iconurl = "https://openweathermap.org/img/wn/" + res.list[i].weather[0].icon + "@2x.png";
+        $(img).attr('src', iconurl);
+        var iconEle = $(img).attr('src', iconurl);
         carBodyClass = iconEle.addClass("card-body"); //class added
         var dateEle = carHeaderClass.text(moment().add((i+1), 'day'));
         cardClass.append(dateEle , iconEle , weatherEle , humidityEle);
@@ -131,16 +135,3 @@ function searchCity(city) {
 
 });
 
-// $("#day1Date").html(moment().add(1, 'days').calendar());
-//     $("#day2Date").html(moment().add(2, 'days').calendar());
-//     $("#day3Date").html(moment().add(3, 'days').calendar());
-//     $("#day4Date").html(moment().add(4, 'days').calendar());
-//     $("#day5Date").html(moment().add(5, 'days').calendar())
-
-
-//     <div class="card text-white bg-primary mb-3" style="max-width: 12rem; max-height:12rem;">
-//       <div class="card-header" id = "day5Date">Header</div>
-//       <div class="card-body"><div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
-//       <h5 class="card-title"></h5>
-//       <p class="card-text"> </p>
-//       </div>
