@@ -4,14 +4,10 @@ Developers are often tasked with retrieving data from another application's API 
 
 ## User Story
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
+As a traveller/user i would like to know the weather of my city or any other city so i can be prepared for any situation.
 
 ## Acceptance Criteria
 
-```
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history
@@ -27,4 +23,5 @@ WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 ```
 
-The following image demonstrates the application functionality:
+To show the functionality of the dashboard please check the screenshots folder.
+

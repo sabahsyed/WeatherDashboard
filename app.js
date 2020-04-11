@@ -29,15 +29,6 @@ $("#submit").on("click", function(){
 
 
 function searchCity(city) {
-  //$("#renderedCities").val(localStorage.getItem(city));
-  // var searchedCityName = JSON.parse(localStorage.getItem("searchedCityName"));
-  // if (searchedCityName == null) {
-  //    searchedCityName = [];
-  //   searchedCityName[0] = city;
-  // } else {
-  //   var size = searchedCityName.length;
-  //   searchedCityName[size] = city;
-  // }
 
   var queryURL = weatherURL(city);
   $.ajax({
