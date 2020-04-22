@@ -6,7 +6,8 @@
 //and the UV index.
 $( document ).ready(function() {
   console.log( "ready!" );
-
+  var lastCity = localStorage.getItem("searchedCityName");
+  searchCity(lastCity)
 function weatherURL(city){
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?";
 var query = "q=" + city ; 
@@ -117,7 +118,10 @@ function searchCity(city) {
         $(img).attr('src', iconurl);
         var iconEle = $(img).attr('src', iconurl);
         carBodyClass = iconEle.addClass("card-body"); //class added
-        var dateEle = carHeaderClass.text(moment().add((i+1), 'day'));
+        var date = moment().add((i+1),"day");
+        var nextDay = date.format('MM-DD-YYYY');
+        var dateEle = carHeaderClass.text(nextDay);
+        console.log("I am the nextday: " + nextDay);
         cardClass.append(dateEle , iconEle , weatherEle , humidityEle);
         $(".card-group").append(cardClass);
       }
