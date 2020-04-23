@@ -1,6 +1,10 @@
 body{
     box-sizing: border-box;
+    background-color:white;
   }
+.heading{
+    color: orange !important;
+}
 #bootstrap-overrides .navbar-brand {
     font-size: 40px;
     color: white;
@@ -9,6 +13,7 @@ body{
     display: block;
     text-align: center;
 }
+
 .container{
     float: left;
     max-width: 100%;
@@ -18,11 +23,14 @@ body{
 }
 .form-inline {
     margin-top: 10px;
+    
 }
-.dropdown-menu{
+.dropdown-menu {
+  
     padding:10px;
     margin:10px;
-    border: none;
+    border: 1px blue;
+
 }
 .card-9{
     
@@ -51,9 +59,18 @@ button{
  max-width: 12rem; 
 max-height:12rem;
 color:white;
-background-color: #1284ff;
+background-color:orange;
 border: 1px solid #f8f9fa;
 }
 .card-header{
     border: 1px solid white;
+}
+#uvIndexStyle{
+    border:1px;
+}
+ #uvIndexStyle ,#uvIndex{
+    display: inline;
+}
+#wicon{
+    font-size: 10px;
 }

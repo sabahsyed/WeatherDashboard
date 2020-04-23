@@ -5,9 +5,10 @@
 // an icon representation of weather conditions, the temperature, the humidity, the wind speed, 
 //and the UV index.
 $( document ).ready(function() {
+  var uvIndexValue = document.getElementById("uvIndexStyle")
   console.log( "ready!" );
-  var lastCity = localStorage.getItem("searchedCityName");
-  searchCity(lastCity)
+  var searchedCityName = JSON.parse(localStorage.getItem("searchedCityName"));
+  searchCity(searchedCityName);
 function weatherURL(city){
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?";
 var query = "q=" + city ; 
@@ -36,7 +37,7 @@ function searchCity(city) {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    var searchedCityName = JSON.parse(localStorage.getItem("searchedCityName"));
+   // var searchedCityName = JSON.parse(localStorage.getItem("searchedCityName"));
   if (searchedCityName == null) {
       searchedCityName = [];
     searchedCityName[0] = response.name;
@@ -69,13 +70,16 @@ function searchCity(city) {
         method: "GET"
       }).then(function(uvresponse) {
         console.log("UV index response" + JSON.stringify(uvresponse));
-        if(uvresponse[0].value > 6){
-          $("#uvIndexStyle").css("background-color", "red");
-        }else{
-          $("#uvIndexStyle").css("background-color", "light-green");
-        }
-        $("#uvIndexStyle").html( uvresponse[0].value);
-        
+       // $("#uvIndexStyle").html( "UV Index :" +uvresponse[0].value);
+       $("#uvIndex").html("UV Index :");
+       $("#uvIndexStyle").html(uvresponse[0].value);
+       if(uvresponse[0].value > 6){
+        $("#uvIndexStyle").css("background-color", "red");
+      }else{
+        $("#uvIndexStyle").css("background-color", "light-green");
+      }
+       var uvStyle = uvresponse[0].value;
+       
       });
     }
     localStorage.setItem("searchedCityName", JSON.stringify(searchedCityName));

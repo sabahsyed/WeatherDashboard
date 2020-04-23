@@ -19,14 +19,14 @@
 </head>
 <body id = "bootstrap-overrides">
     <nav class="navbar navbar-dark bg-dark ">
-        <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
+        <span class="navbar-brand mb-0 h1 heading">Weather Dashboard</span>
     </nav>
     <div class = "container">
         <div class = "row">
-                <div class = "col-md-3">
+                <div class = "col-md-3 cityRendered">
                     <nav class="navbar navbar-light bg-light">
                         <form class="form-inline">
-                            <h4> Search for a city:</h4>
+                            <h4 style = "color: orange;"> Search for a city:</h4>
                         <input class="form-control mr-sm-2" type="text" placeholder="Search"  id = "cityName">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id = "submit">Search</button>
                         </form>
@@ -38,12 +38,12 @@
                 <div class = "col-md-9">
                     <div class="card-9">
                         <div class="card-body">
-                            <p id="currentCity" class="lead"> </p>
-                           <button class = "cityBtn"><h3 id = "city"></h3> <div id= "currentDate"></div> <div id="icon"><img id="wicon" src="" alt="Weather icon"></div></button>
+                            <p id="currentCity" class="lead" > </p>
+                           <button class = "cityBtn"><h3 id = "city" style = "color:orange;"></button></h3> <div id= "currentDate"></div> <div id="icon"><img id="wicon" src="" ></div>
                             <p id = "temperature"></p>
                             <p id = "humidity"></p>
                             <p id = "windSpeed"> </p>
-                            <p id = "uvIndex">UV Index : <span id = "uvIndexStyle"></span></p>
+                            <p id = "uvIndex"> <span class = "span"><p id = "uvIndexStyle"></p></span></p>
                         </div>
                     </div>
                     <h3>5 day forecast : </h3> <br/>
