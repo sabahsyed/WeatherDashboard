@@ -30,4 +30,4 @@ To show the functionality of the dashboard please check the screenshots folder.
 [Google.com](https://www.w3schools.com/css/css3_images.asp)
 
 <img width="1440" alt="Screen Shot 2020-04-24 at 8 44 27 PM" src="https://user-images.githubusercontent.com/58546604/80270843-44fb4b00-8670-11ea-8039-3ae324a80903.png">
- !Markdown [Weather Screenshot](./screenshots/Screen Shot 2020-04-11 at 1.52.13 AM.png)
+ !Markdown [Weather Screenshot](screenshots/Screen Shot 2020-04-11 at 1.52.13 AM.png)
