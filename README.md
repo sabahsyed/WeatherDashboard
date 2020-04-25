@@ -26,5 +26,4 @@ THEN I am presented with the last searched city forecast
 To show the functionality of the dashboard please check the screenshots folder.
 
 ## GIFS
-<iframe src="https://drive.google.com/file/d/17zanX-hoLGqlfKtaHwL3eXY-gmVdEGww/preview" width="640" height="480"></iframe>
-My favorite search engine is [Duck Duck Go](https://duckduckgo.com).
+https://drive.google.com/file/d/17zanX-hoLGqlfKtaHwL3eXY-gmVdEGww/preview
