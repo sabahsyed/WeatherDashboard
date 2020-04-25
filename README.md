@@ -26,4 +26,5 @@ THEN I am presented with the last searched city forecast
 To show the functionality of the dashboard please check the screenshots folder.
 
 ## GIFS
-https://drive.google.com/file/d/17zanX-hoLGqlfKtaHwL3eXY-gmVdEGww/view
+[Weather Dashboard](https://drive.google.com/file/d/17zanX-hoLGqlfKtaHwL3eXY-gmVdEGww/view)
+[Google.com](https://www.w3schools.com/css/css3_images.asp)
