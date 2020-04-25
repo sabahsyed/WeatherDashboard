@@ -21,9 +21,12 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
-```
 
-To show the functionality of the dashboard please check the screenshots folder.
-
-## GIFS
+## GIFs
 https://drive.google.com/file/d/17zanX-hoLGqlfKtaHwL3eXY-gmVdEGww/preview
+
+## Link to Deployed Application
+https://sabahsyed.github.io/WeatherDashboard/
+
+##GitHub Link
+https://github.com/sabahsyed/WeatherDashboard
